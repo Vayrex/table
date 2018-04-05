@@ -1,4 +1,4 @@
-import {Lexer} from "./src/app/conditions/parser/lexer";
+/*import {Lexer} from "./src/app/conditions/parser/lexer";
 import {RecursiveDescentParser} from "./src/app/conditions/parser/descent.parser";
 
 let lexer = new Lexer('(true && true) && false || false || false && true && false'),
@@ -12,5 +12,5 @@ for(let i = 0; i < 100; i++){
 
 
 console.log((new Date().getTime() - start.getTime()) / 1000);
-console.log(parser.toString());
+console.log(parser.toString());*/
 

@@ -1,25 +1,18 @@
 import {Filter} from "../compability";
 import {getOperator, DateOperators} from "./date.operators";
 
-export class DateFilter implements Filter{
+export class DateFilter implements Filter {
 
   constructor(
-    private _operator:DateOperators,
+    private _operator: DateOperators,
     private _value: Date | [Date, Date]
   ) {
 
   }
 
-  public filter(data: Date[]) {
-    if (!data.length) {
-      return [];
-    }
-
-    let operator = getOperator(this._operator);
-
-    return data.filter((v: Date) => {
-      return operator(v, this._value);
-    });
+  public boolean(v: Date) {
+    const operator = getOperator(this._operator);
+    return operator(v, this._value);
   }
 
   public setOperator(operator: DateOperators) {
@@ -29,4 +22,4 @@ export class DateFilter implements Filter{
   public setValue(value: Date | [Date, Date]) {
     this._value = value;
   }
-};
+}
