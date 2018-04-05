@@ -1,0 +1,10 @@
+1. Set default separate filters conditions to "AND".
+2. Set default one filter all fields condition to "OR".
+3. Change condition operator.
+    a && b && c -> a && (b || c).
+
+4. Regroup condition.
+   (a && b) || c -> a && (b || c).
+
+5. Swap filters.
+    (a && b) || (c || d) -> (c && b) || (a || d)

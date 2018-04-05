@@ -1,0 +1,8 @@
+1. There must be ability to add actions to table.
+---------------------------------------------------
+2. By default there must be remove/edit.
+---------------------------------------------------
+3. There must be add button.
+For now we are thinking to add row under thead with inputs/selects.
+But it can be a popup or just link to another page, where user can add new item.
+Seems it must be configurable.
