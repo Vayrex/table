@@ -7,7 +7,7 @@
 - ability to add layer.
 - layers will have index.
 - must be able to convert cells/layers structure to boolean expression.
-  ((a && b) || c) || d && e
+  (a && (b || c)) || d && e
   where:
   - ( and ) shows separate layer
   - (( )) one inner and one outer layer, as layers can be nested.

@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const plugin = new webpack.optimize.CommonsChunkPlugin({
-    names:['app','vendors']
+    names:['main','polyfills']
 });
 
 exports.default = [plugin];

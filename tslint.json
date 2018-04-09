@@ -7,8 +7,7 @@
     "callable-types": true,
     "class-name": true,
     "comment-format": [
-      true,
-      "check-space"
+      false
     ],
     "curly": true,
     "deprecation": {
@@ -126,7 +125,7 @@
     "component-selector": [
       true,
       "element",
-      "app",
+      "table",
       "kebab-case"
     ],
     "no-output-on-prefix": true,

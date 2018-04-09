@@ -11,13 +11,13 @@ plugins = plugins.concat(require('./plugins/progress'));
 plugins = plugins.concat(require('./plugins/circular_dependecy'));
 // named modules
 plugins = plugins.concat(require('./plugins/named_modules'));
-//html plugin
-plugins = plugins.concat(require('./plugins/html'));
 //extract text plugin
 plugins = plugins.concat(require('./plugins/extract_text'));
+//html plugin
+plugins = plugins.concat(require('./plugins/html'));
 //commons chunks
 plugins = plugins.concat(require('./plugins/commons_chunks'));
-//angular
+//angular-ui
 plugins = plugins.concat(require('./plugins/angular_compiler'));
 
 // rules /////////////////////////////////////////////////////////////////////////////////////////////

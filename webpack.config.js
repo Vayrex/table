@@ -145,7 +145,7 @@ module.exports = {
   },
   "entry": {
     "main": [
-      "./src/main.ts"
+      "./src/app.app.ts"
     ],
     "polyfills": [
       "./src/polyfills.ts"

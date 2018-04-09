@@ -1,0 +1,10 @@
+<div class="row" >
+  <div *ngFor="let filter of filters" [ngStyle]="{width:(100/filters.length)+'%'}">
+
+    <table-string-filter
+      *ngIf="isOfFilterType('string', filter)"
+      [filter]="filter">
+    </table-string-filter>
+
+  </div>
+</div>

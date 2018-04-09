@@ -1,0 +1,12 @@
+1. Down.
+  1.1. Container.
+  1.2. Layer.
+2. Drag over.
+ 2.1 Container.
+  2.1.1. When move out -> nothing happens
+ 2.2. Layer.
+  2.2.1. Strict mode. Move out over layer is not possible. Inner layer can not overlap parent.
+  2.2.2. Not strict mode. Outer Layer must be removed afte
+
+3. Up. Get selected cells.
+4. Layer with for selected cells added.
