@@ -1,16 +1,17 @@
-import {QueryModel} from "./query/query.model";
-import {ColumnsCollectionModel} from "./columns/collection/columns.collection.model";
-import {createColumnsCollection} from "./columns/index";
-import {Paginator} from "./paginator/paginator";
-import {ITableConfig, TableConfig} from "./config/index";
+import {QueryModel} from "../query/query.model";
+import {ColumnsCollectionModel} from "../columns/collection/columns.collection.model";
+import {createColumnsCollection} from "../columns/index";
+import {Paginator} from "../paginator/paginator";
+import {ITableConfig, TableConfig} from "../config/index";
+import {Messanger} from "../messanger";
 
-
-export class TableApp {
+export class Table {
 
   private _columnsCollection: ColumnsCollectionModel;
   private _query: QueryModel;
   private _paginator: Paginator;
   private _config: TableConfig;
+  private _messanger = new Messanger();
 
   constructor(
     private _data: any[],
@@ -22,7 +23,7 @@ export class TableApp {
   private init(config: ITableConfig) {
     this._config = new TableConfig(config);
     this._columnsCollection = createColumnsCollection(this._config);
-    this._query = new QueryModel(this._columnsCollection.getActiveFilters());
+    this._query = new QueryModel(this._messanger, this._columnsCollection.getActiveFilters());
   }
 
   public getQuery() {

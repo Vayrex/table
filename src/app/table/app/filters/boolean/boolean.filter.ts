@@ -1,6 +1,6 @@
 import {IFilter} from "../interfaces";
 import {getOperator, BooleanOperators} from "./boolean.operators";
-import {CellModel} from "../../cell/cell.model";
+import {CellModel} from "../../../cell/cell.model";
 
 export class BooleanFilterModel implements IFilter {
 

@@ -1,6 +1,6 @@
 import {IFilter} from "../interfaces";
 import {getOperator, NumericOperators} from "./numeric.operators";
-import {CellModel} from "../../cell/cell.model";
+import {CellModel} from "../../../cell/cell.model";
 
 export class NumericFilterModel implements IFilter {
 

@@ -6,6 +6,8 @@ import {Or} from "./operators/non.terminal/or";
 import {And} from "./operators/non.terminal/and";
 import {Not} from "./operators/non.terminal/not";*/
 
+import {Messanger} from "../messanger";
+
 declare const Lexer: any;
 
 export class QueryModel {
@@ -15,6 +17,7 @@ export class QueryModel {
   private _lexer: any;
 
   constructor(
+    private _messanger: Messanger,
     private _filters,
     private _operators = []
   ) {
@@ -22,7 +25,13 @@ export class QueryModel {
   }
 
   private init() {
+    this._messanger.onFiltersChanged.subscribe(() => {
 
+    });
+  }
+
+  public getFilters() {
+    return this._filters;
   }
 
   private generateOperators() {

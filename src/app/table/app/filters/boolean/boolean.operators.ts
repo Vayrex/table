@@ -1,4 +1,4 @@
-import {Operator} from "../interfaces";
+import {Operator} from "../base";
 
 const eq: Operator<any, any> = (value: boolean, filterValue: boolean) => {
   return value === filterValue;

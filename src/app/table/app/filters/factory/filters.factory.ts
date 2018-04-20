@@ -3,7 +3,7 @@ import {NumericFilterModel} from "./numeric/numeric.filter";
 import {StringFilterModel} from "./string/string.filter";
 import {BooleanFilterModel} from "./boolean/boolean.filter";
 import {IFilter} from "./interfaces";
-import {CellModel} from "../cell/cell.model";
+import {CellModel} from "../../cell/cell.model";
 import {DateOperators} from "./date/date.operators";
 import {StringOperators} from "./string/string.operators";
 import {NumericOperators} from "./numeric/numeric.operators";

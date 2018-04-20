@@ -1,9 +1,9 @@
 import {IFilter} from "../filters/interfaces/interface.filter";
-import {CellModel} from "../cell/cell.model";
+import {Cell} from "../../cell/cell/cell.model";
 
 export class ColumnModel {
   constructor(
-    private _cellModel: CellModel,
+    private _cellModel: Cell,
     private _filterModel: IFilter
   ) {
 

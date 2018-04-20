@@ -1,4 +1,4 @@
-export class CellModel {
+export class Cell {
 
   private _valueGetter: Function;
   private _valueFormatter: Function | undefined;
