@@ -2,9 +2,9 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {BrowserModule} from "@angular/platform-browser";
 import {NgModule} from "@angular/core";
 import {AppComponent} from "./app.component";
-import {FiltersComponent, QueryComponent} from "./table/angular-ui";
+import {FiltersComponent, QueryComponent} from "./angular-ui";
 import {DataService} from "./services/data.service";
-import {StringFilterComponent} from "./table/angular-ui/filters/string.filter/string.filter.component";
+import {StringFilterComponent} from "./angular-ui/filters/string.filter/string.filter.component";
 
 
 @NgModule({

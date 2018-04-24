@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {QueryModel} from "../../app/query/query.model";
+import {QueryModel} from "../../table/app/query/query.model";
 import {IFilter} from "../../app/columns/filters/interfaces";
 
 

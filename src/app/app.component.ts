@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {DataService} from "./services/data.service";
-import {Table} from "./table/app/table/table.app";
+import {Table} from "./table/app/table";
 import {IFilter} from "./table/app/columns/filters/interfaces";
 import {QueryModel} from "./table/app/query/query.model";
 import {ITableConfig} from "./table/app/config";
@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.table = new Table(this.data, this.config);
+    this.table = Table.create(this.data, this.config);
     this.filters = this.table.getFilters();
     this.query = this.table.getQuery();
   }

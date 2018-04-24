@@ -1,4 +1,4 @@
-import {Operator} from "../base";
+import {Operator} from "../base/index";
 
 const eq: Operator<any, any> = (value: boolean, filterValue: boolean) => {
   return value === filterValue;
