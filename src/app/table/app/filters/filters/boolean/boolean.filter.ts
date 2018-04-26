@@ -1,13 +1,13 @@
-import {IFilter} from "../interfaces";
+import {IFilter} from "../base";
 import {getOperator, BooleanOperators} from "./boolean.operators";
-import {CellModel} from "../../../cell/cell.model";
+import {Cell} from "../../../cells";
 
-export class BooleanFilterModel implements IFilter {
+export class BooleanFilter implements IFilter {
 
   private _value: boolean;
 
   constructor(
-    private _cellModel: CellModel,
+    private _cell: Cell,
     private _operator: BooleanOperators
   ) {
 
@@ -15,7 +15,7 @@ export class BooleanFilterModel implements IFilter {
 
   public boolean(row) {
     const operator = getOperator(this._operator);
-    return operator(!!this._cellModel.getValue(row), this._value);
+    return operator(!!this._cell.getValue(row), this._value);
   }
 
   public setOperator(operator: BooleanOperators) {

@@ -1,13 +1,7 @@
-import {DateFilterModel} from "./date/date.filter";
-import {NumericFilterModel} from "./numeric/numeric.filter";
-import {StringFilterModel} from "./string/string.filter";
-import {BooleanFilterModel} from "./boolean/boolean.filter";
-import {IFilter} from "./interfaces";
-import {CellModel} from "../../cell/cell.model";
-import {DateOperators} from "./date/date.operators";
-import {StringOperators} from "./string/string.operators";
-import {NumericOperators} from "./numeric/numeric.operators";
-import {BooleanOperators} from "./boolean/boolean.operators";
+import {IFilter, DateFilter, StringFilter, BooleanFilter} from "../filters";
+import {} from "../filters";
+import {Cell} from "../../cells";
+
 import {DEFAULT_STRING_OPERATORS} from "../../config/defaults";
 import {IFilterModelConfig} from "../../config/interfaces/interface.columns.config";
 
@@ -17,7 +11,7 @@ const defautOperators = {
   "string": DEFAULT_STRING_OPERATORS
 };
 
-export function createFilterModel(cell: CellModel, config: IFilterModelConfig): IFilter {
+export function createFilter(cell: Cell, config: IFilterModelConfig): IFilter {
 
   let type = config.type,
     operators = config.operators || defautOperators[type],
@@ -25,16 +19,16 @@ export function createFilterModel(cell: CellModel, config: IFilterModelConfig): 
 
   switch (type) {
     case "string":
-      return new StringFilterModel(cell, operators, operator as StringOperators);
+      return new StringFilter(cell, operators, operator as StringOperators);
 
     case "numeric":
-      return new NumericFilterModel(cell, operator as NumericOperators);
+      return new NumericFilter(cell, operator as NumericOperators);
 
     case "date":
-      return new DateFilterModel(cell, operator as DateOperators);
+      return new DateFilter(cell, operator as DateOperators);
 
     case "boolean":
-      return new BooleanFilterModel(cell, operator as BooleanOperators);
+      return new BooleanFilter(cell, operator as BooleanOperators);
   }
 }
 

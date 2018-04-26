@@ -1,6 +1,6 @@
 export interface IFilter {
-  setOperator: (v: string) => void;
   setValue: (v: any) => void;
-  boolean: (data: any) => boolean;
+  filter: (row: any) => boolean;
   isActive: () => boolean;
+  setIsActive: (active: boolean) => void;
 }

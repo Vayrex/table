@@ -1,17 +1,15 @@
-import {IFilter} from "../interfaces";
+import {IFilter} from "../base";
 import {getOperator, StringOperators} from "./string.operators";
-import {CellModel} from "../../../cell/cell.model";
+import {Cell} from "../../../cells";
 import {IStringOperatorsMap} from "../../../config/interfaces/interface.operators.config";
-import {EventEmitter} from "@angular/core";
 
-export class StringFilterModel implements IFilter {
+export class StringFilter implements IFilter {
 
-  public onActiveStatusChange = new EventEmitter();
   private _value: string | RegExp;
   private _isActive: boolean;
 
   constructor(
-    private _cellModel: CellModel,
+    private _cell: Cell,
     private _operatorsMap: IStringOperatorsMap,
     private _operator: StringOperators = "="
   ) {
@@ -19,7 +17,7 @@ export class StringFilterModel implements IFilter {
   }
 
   public boolean(row) {
-    return getOperator(this._operator)(this._cellModel.getValue(row), this._value);
+    return getOperator(this._operator)(this._cell.getValue(row), this._value);
   }
 
   public setOperator(operator: StringOperators) {
@@ -28,11 +26,10 @@ export class StringFilterModel implements IFilter {
 
   public setValue(value: string | RegExp) {
     this._value = value;
-    let isActive = !!value;
-    if (isActive !== this._isActive) {
-      this.onActiveStatusChange.emit(this);
-    }
-    this._isActive = isActive;
+  }
+
+  public setIsActive(active: boolean) {
+    this._isActive = active;
   }
 
   public isActive() {

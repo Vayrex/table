@@ -5,7 +5,6 @@ import {False} from "./operators/terminal/false";
 import {Or} from "./operators/non.terminal/or";
 import {And} from "./operators/non.terminal/and";
 import {Not} from "./operators/non.terminal/not";*/
-
 import {Messanger} from "../messanger";
 
 declare const Lexer: any;
